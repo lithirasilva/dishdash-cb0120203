@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyNavBar extends StatelessWidget {
-  final int selectedIndex;
-  final Function(int) onDestinationSelected;
+  final int selectedIndex; // Index of the currently selected item
+  final Function(int)
+      onDestinationSelected; // Callback function for item selection
 
   const MyNavBar({
     Key? key,
@@ -13,8 +14,8 @@ class MyNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: selectedIndex,
-      onTap: onDestinationSelected,
+      currentIndex: selectedIndex, // Current selected index
+      onTap: onDestinationSelected, // Callback when an item is tapped
       selectedItemColor:
           Color.fromARGB(255, 235, 149, 78), // Custom color for selected item
       unselectedItemColor: Theme.of(context)
@@ -22,20 +23,20 @@ class MyNavBar extends StatelessWidget {
           .inverseSurface, // Color for unselected items
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
+          icon: Icon(Icons.home), // Home icon
+          label: 'Home', // Label for accessibility
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
+          icon: Icon(Icons.search), // Search icon
+          label: 'Search', // Label for accessibility
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications),
-          label: 'Notifications',
+          icon: Icon(Icons.notifications), // Notifications icon
+          label: 'Notifications', // Label for accessibility
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
+          icon: Icon(Icons.person), // Profile icon
+          label: 'Profile', // Label for accessibility
         ),
       ],
     );

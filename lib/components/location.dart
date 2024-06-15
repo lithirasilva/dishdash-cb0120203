@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 
 class Location extends StatelessWidget {
   const Location({
-    super.key,
-  });
-//open location menu
+    Key? key,
+  }) : super(key: key);
+
+  // Method to open location search box dialog
   void openLocationSearchBox(BuildContext context) {
     showDialog(
-        context: context,
-        builder: (context) => const AlertDialog(
-              title: Text("Your Location"),
-              content: TextField(
-                decoration: InputDecoration(
-                  hintText: "Enter your location",
-                ),
-              ),
-            ));
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Your Location"),
+        content: TextField(
+          decoration: InputDecoration(
+            hintText: "Enter your location",
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -25,16 +27,18 @@ class Location extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Location label
           Text(
             "Location",
-            style:
-                TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.inversePrimary,
+            ),
           ),
           GestureDetector(
             onTap: () => openLocationSearchBox(context),
             child: Row(
               children: [
-                //address
+                // Address text
                 Text(
                   "1234 Main Street, Sri Lanka",
                   style: TextStyle(
@@ -42,7 +46,7 @@ class Location extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                //drop down menu
+                // Dropdown icon
                 const Icon(Icons.keyboard_arrow_down),
               ],
             ),

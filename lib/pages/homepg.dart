@@ -5,6 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // List of Restaurant objects representing the restaurant data
     final List<Restaurant> restaurants = [
       Restaurant(
         name: 'Pizza Palace',
@@ -93,41 +94,45 @@ class HomePage extends StatelessWidget {
     ];
 
     return Scaffold(
+      // ListView.builder to create a scrollable list of restaurant items
       body: ListView.builder(
-        itemCount: restaurants.length,
+        itemCount: restaurants.length, // Number of items in the list
         itemBuilder: (context, index) {
-          final restaurant = restaurants[index];
+          final restaurant =
+              restaurants[index]; // Get the restaurant at the current index
           return Container(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0), // Add padding around each item
             child: Row(
               children: [
                 Expanded(
-                  flex: 5,
+                  flex: 5, // Ratio of the space taken by this child
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, // Align children to the start
                     children: [
                       Text(
-                        restaurant.name,
+                        restaurant.name, // Display the restaurant name
                         style: const TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8.0),
+                      const SizedBox(height: 8.0), // Add vertical space
                       Text(
-                        restaurant.cuisine,
+                        restaurant.cuisine, // Display the cuisine type
                         style: TextStyle(
                           fontSize: 16.0,
                           color: Theme.of(context).colorScheme.inversePrimary,
                         ),
                       ),
-                      const SizedBox(height: 8.0),
+                      const SizedBox(height: 8.0), // Add vertical space
                       Row(
                         children: [
-                          const Icon(Icons.star, color: Colors.yellow),
-                          const SizedBox(width: 4.0),
+                          const Icon(Icons.star,
+                              color: Colors.yellow), // Star icon
+                          const SizedBox(width: 4.0), // Add horizontal space
                           Text(
-                            restaurant.rating.toString(),
+                            restaurant.rating.toString(), // Display the rating
                             style: const TextStyle(fontSize: 16.0),
                           ),
                         ],
@@ -135,16 +140,18 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 6.0),
+                const SizedBox(width: 6.0), // Add horizontal space
                 Expanded(
-                  flex: 3,
+                  flex: 3, // Ratio of the space taken by this child
                   child: Container(
-                    height: 100.0,
+                    height: 100.0, // Fixed height for the image
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100.0),
+                      borderRadius: BorderRadius.circular(
+                          100.0), // Circular border radius
                       image: DecorationImage(
-                        image: AssetImage(restaurant.imageUrl),
-                        fit: BoxFit.cover,
+                        image:
+                            AssetImage(restaurant.imageUrl), // Restaurant image
+                        fit: BoxFit.cover, // Cover the entire container
                       ),
                     ),
                   ),
@@ -158,6 +165,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+// Restaurant class to define the structure of restaurant data
 class Restaurant {
   final String name;
   final String cuisine;

@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import '../components/my_button.dart';
 
 class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+  RegisterPage({Key? key});
 
-  // text editing controllers
-  final EmailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
-  final phoneNumberController = TextEditingController();
+  // Text editing controllers
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
 
-  // register user method
-  void registerUser() {}
+  // Register user method
+  void registerUser() {
+    // Implement registration logic here
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class RegisterPage extends StatelessWidget {
                 children: [
                   const SizedBox(height: 81),
 
-                  // logo
+                  // Logo
                   SizedBox(
                     width: 230,
                     height: 220,
@@ -48,9 +51,9 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 10),
 
-                  // Email textfield
+                  // Email text field
                   TextField(
-                    controller: EmailController,
+                    controller: emailController,
                     decoration: const InputDecoration(
                       labelText: 'Email',
                       hintText: 'Enter your Email',
@@ -60,7 +63,7 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 10),
 
-                  // phone number textfield
+                  // Phone number text field
                   TextField(
                     controller: phoneNumberController,
                     decoration: const InputDecoration(
@@ -72,7 +75,7 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 10),
 
-                  // password textfield
+                  // Password text field
                   TextField(
                     controller: passwordController,
                     decoration: const InputDecoration(
@@ -84,7 +87,7 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 10),
 
-                  // confirm password textfield
+                  // Confirm password text field
                   TextField(
                     controller: confirmPasswordController,
                     decoration: const InputDecoration(
@@ -96,7 +99,7 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 50),
 
-                  // register button
+                  // Register button
                   MyButton(
                     onTap: registerUser,
                     text: 'Sign Up',
@@ -104,19 +107,21 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 40),
 
-                  // already a member? sign in now
+                  // Already a member? Sign in now
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Already a member?',
                         style: TextStyle(
-                            color: Theme.of(context).colorScheme.onSurface),
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                       ),
                       const SizedBox(width: 4),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pop(context);
+                          Navigator.pop(
+                              context); // Navigate back to previous screen
                         },
                         child: const Text(
                           'Sign in now',

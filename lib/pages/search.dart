@@ -99,7 +99,7 @@ class _SearchPageState extends State<SearchPage> {
                           // Handle item tap if needed
                         },
                       ),
-                      // const Divider(),  // divider for better visuals
+                      // const Divider(),  // Divider for better visuals
                     ],
                   );
                 }

@@ -33,6 +33,7 @@ class _EditCardState extends State<EditCard> {
   @override
   void initState() {
     super.initState();
+    // Initialize text controllers with the initial values provided by the widget
     nameController = TextEditingController(text: widget.initialName);
     emailController = TextEditingController(text: widget.initialEmail);
     phoneController = TextEditingController(text: widget.initialPhone);
@@ -42,26 +43,34 @@ class _EditCardState extends State<EditCard> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Edit Profile'),
+      title: Text('Edit Profile'), // Dialog title
       content: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize
+              .min, // Ensure the column only takes the necessary space
           children: [
             TextField(
-              controller: nameController,
-              decoration: InputDecoration(labelText: 'Name'),
+              controller: nameController, // Controller for the name input field
+              decoration:
+                  InputDecoration(labelText: 'Name'), // Input decoration
             ),
             TextField(
-              controller: emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              controller:
+                  emailController, // Controller for the email input field
+              decoration:
+                  InputDecoration(labelText: 'Email'), // Input decoration
             ),
             TextField(
-              controller: phoneController,
-              decoration: InputDecoration(labelText: 'Phone'),
+              controller:
+                  phoneController, // Controller for the phone input field
+              decoration:
+                  InputDecoration(labelText: 'Phone'), // Input decoration
             ),
             TextField(
-              controller: locationController,
-              decoration: InputDecoration(labelText: 'Location'),
+              controller:
+                  locationController, // Controller for the location input field
+              decoration:
+                  InputDecoration(labelText: 'Location'), // Input decoration
             ),
           ],
         ),
@@ -69,29 +78,36 @@ class _EditCardState extends State<EditCard> {
       actions: [
         TextButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(); // Close the dialog on cancel
           },
-          child: Text('Cancel'),
+          child: Text('Cancel'), // Cancel button text
         ),
         ElevatedButton(
           onPressed: () {
             widget.onSave(
-              nameController.text,
-              emailController.text,
-              phoneController.text,
-              locationController.text,
+              nameController
+                  .text, // Pass the updated name to the onSave callback
+              emailController
+                  .text, // Pass the updated email to the onSave callback
+              phoneController
+                  .text, // Pass the updated phone to the onSave callback
+              locationController
+                  .text, // Pass the updated location to the onSave callback
             );
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(); // Close the dialog on save
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: widget.buttonColor, // Use provided button color
+            backgroundColor:
+                widget.buttonColor, // Use the provided button color
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(120),
+              borderRadius:
+                  BorderRadius.circular(120), // Rounded button corners
             ),
           ),
           child: Text(
             'Save',
-            style: widget.buttonTextStyle, // Apply provided text style
+            style: widget
+                .buttonTextStyle, // Apply the provided text style to the button
           ),
         ),
       ],
@@ -100,6 +116,7 @@ class _EditCardState extends State<EditCard> {
 
   @override
   void dispose() {
+    // Dispose of the text controllers when the widget is disposed
     nameController.dispose();
     emailController.dispose();
     phoneController.dispose();

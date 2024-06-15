@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/editcard.dart';
+import '../components/editcard.dart'; // Import the EditCard widget
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -18,106 +18,122 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor:
+          Theme.of(context).colorScheme.surface, // Background color of the page
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text('Profile'), // Title of the app bar
         automaticallyImplyLeading: false, // Remove back icon
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment
+            .start, // Align children to the start of the column
         children: [
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0), // Padding around the child widget
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment:
+                  MainAxisAlignment.center, // Center the child widget
               children: [
                 CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage(userImageUrl),
+                  radius: 60, // Radius of the circular avatar
+                  backgroundImage:
+                      AssetImage(userImageUrl), // Image of the user
                 ),
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 16.0), // Horizontal padding around the child widget
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment
+                  .start, // Align children to the start of the column
               children: [
                 const Text(
-                  'Name:',
+                  'Name:', // Label for the user's name
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  userName,
+                  userName, // Display the user's name
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(height: 12.0),
+                SizedBox(height: 12.0), // Space between the widgets
                 const Text(
-                  'Email:',
+                  'Email:', // Label for the user's email
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  userEmail,
+                  userEmail, // Display the user's email
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(height: 12.0),
+                SizedBox(height: 12.0), // Space between the widgets
                 const Text(
-                  'Phone:',
+                  'Phone:', // Label for the user's phone number
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  userPhone,
+                  userPhone, // Display the user's phone number
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(height: 12.0),
+                SizedBox(height: 12.0), // Space between the widgets
                 const Text(
-                  'Location:',
+                  'Location:', // Label for the user's location
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  userLocation,
+                  userLocation, // Display the user's location
                   style: TextStyle(fontSize: 16.0),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 24.0),
+          SizedBox(height: 24.0), // Space between the widgets
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 16.0), // Horizontal padding around the child widget
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceEvenly, // Space the children evenly
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    _showEditProfileDialog(context);
+                    _showEditProfileDialog(
+                        context); // Show the edit profile dialog
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Theme.of(context).colorScheme.surface,
+                    foregroundColor: Theme.of(context)
+                        .colorScheme
+                        .surface, // Button text color
                     backgroundColor:
                         Theme.of(context).colorScheme.secondary, // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 12), // Padding inside the button
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(120),
+                      borderRadius: BorderRadius.circular(
+                          120), // Rounded corners for the button
                     ),
                   ),
                   child: Text(
-                    'Edit',
+                    'Edit', // Button text
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.surface,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .surface, // Button text color
                     ),
                   ),
                 ),
@@ -126,20 +142,27 @@ class _ProfilePageState extends State<ProfilePage> {
                     // Add logout functionality
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Theme.of(context).colorScheme.surface,
+                    foregroundColor: Theme.of(context)
+                        .colorScheme
+                        .surface, // Button text color
                     backgroundColor:
                         Theme.of(context).colorScheme.secondary, // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 12), // Padding inside the button
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(120),
+                      borderRadius: BorderRadius.circular(
+                          120), // Rounded corners for the button
                     ),
                   ),
                   child: Text(
-                    'Logout',
+                    'Logout', // Button text
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.surface,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .surface, // Button text color
                     ),
                   ),
                 ),
@@ -151,15 +174,16 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
+  // Method to show the edit profile dialog
   void _showEditProfileDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return EditCard(
-          initialName: userName,
-          initialEmail: userEmail,
-          initialPhone: userPhone,
-          initialLocation: userLocation,
+          initialName: userName, // Initial user name
+          initialEmail: userEmail, // Initial user email
+          initialPhone: userPhone, // Initial user phone number
+          initialLocation: userLocation, // Initial user location
           onSave: (String newName, String newEmail, String newPhone,
               String newLocation) {
             setState(() {

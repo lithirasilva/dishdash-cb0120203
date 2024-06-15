@@ -47,13 +47,14 @@ class LoginPageState extends State<LoginPage> {
                 children: [
                   const SizedBox(height: 80),
 
-                  // logo
+                  // Logo
                   SizedBox(
                     width: 300,
                     height: 300,
                     child: Column(
                       children: [
-                        Image.asset('images/Logo2.png'),
+                        Image.asset(
+                            'images/Logo2.png'), // Path to the logo image
                         const SizedBox(height: 40),
                         const Text(
                           'Welcome Back!',
@@ -80,19 +81,19 @@ class LoginPageState extends State<LoginPage> {
 
                   const SizedBox(height: 10),
 
-                  // password textfield
+                  // Password textfield
                   TextField(
                     controller: passwordController,
                     decoration: const InputDecoration(
                       labelText: 'Password',
                       hintText: 'Enter your password',
                     ),
-                    obscureText: true,
+                    obscureText: true, // Hide the password text
                   ),
 
                   const SizedBox(height: 10),
 
-                  // forgot password?
+                  // Forgot password
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -105,22 +106,23 @@ class LoginPageState extends State<LoginPage> {
 
                   const SizedBox(height: 30),
 
-                  // sign in button
+                  // Sign in button
                   MyButton(
                     text: 'Sign In',
-                    onTap: () => signUserIn(context),
+                    onTap: () => signUserIn(context), // Sign in logic
                   ),
 
                   const SizedBox(height: 40),
 
-                  // not a member? register now
+                  // Not a member? Register now
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Not a member?',
                         style: TextStyle(
-                            color: Theme.of(context).colorScheme.onSurface),
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                       ),
                       const SizedBox(width: 4),
                       GestureDetector(
@@ -128,7 +130,8 @@ class LoginPageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
+                              builder: (context) =>
+                                  RegisterPage(), // Navigate to RegisterPage
                             ),
                           );
                         },
