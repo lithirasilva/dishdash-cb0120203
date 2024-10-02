@@ -9,7 +9,7 @@ class Location extends StatelessWidget {
   void openLocationSearchBox(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (context) => const AlertDialog(
         title: Text("Your Location"),
         content: TextField(
           decoration: InputDecoration(

@@ -17,7 +17,7 @@ class MyNavBar extends StatelessWidget {
       currentIndex: selectedIndex, // Current selected index
       onTap: onDestinationSelected, // Callback when an item is tapped
       selectedItemColor:
-          Color.fromARGB(255, 235, 149, 78), // Custom color for selected item
+          const Color.fromARGB(255, 235, 149, 78), // Custom color for selected item
       unselectedItemColor: Theme.of(context)
           .colorScheme
           .inverseSurface, // Color for unselected items
