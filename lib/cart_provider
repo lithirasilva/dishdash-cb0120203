@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+import '../pages/food.dart' as food;
+
+class CartProvider with ChangeNotifier {
+  final List<food.Food> _cartItems = [];
+
+  List<food.Food> get cartItems => _cartItems;
+
+  void addToCart(food.Food item) {
+    _cartItems.add(item);
+    notifyListeners(); // Notify listeners to update the UI
+  }
+
+  void clearCart() {
+    _cartItems.clear();
+    notifyListeners();
+  }
+}

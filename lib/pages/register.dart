@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/my_button.dart';
 
 class RegisterPage extends StatelessWidget {
-  RegisterPage({Key? key});
+  RegisterPage({super.key});
 
   // Text editing controllers
   final TextEditingController emailController = TextEditingController();

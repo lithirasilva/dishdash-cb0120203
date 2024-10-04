@@ -31,12 +31,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  firebase_core: ^3.6.0
+  image_picker: ^0.8.5+3
+  google_maps_flutter: ^2.1.6
+  geolocator: ^9.0.1
+  geocoding: ^2.0.5
+  location: ^4.3.0
+  flutter_map: ^4.0.0 # for displaying the map
+  latlong2: ^0.8.1     # for handling lat-long coordinates
+  http: 0.13.6   
   cupertino_icons: ^1.0.2
   provider: ^6.1.2
+  share_plus: ^6.0.0
+  url_launcher: ^6.0.0
+  
+  firebase_auth: ^5.3.1
+
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +76,6 @@ flutter:
     - images/facebook.png
     - images/Logo.png
     - images/Logo2.png
-    - images/Promo.png
     - images/dp.jpg
     - images/restaurants/bakerybliss.jpg
     - images/restaurants/bbq.png
@@ -82,6 +91,32 @@ flutter:
     - images/restaurants/sushideluxe.jpeg
     - images/restaurants/tacotime.jpg
     - images/restaurants/vegievillage.png
+
+    - images/food/burg1.jpg
+    - images/food/burg2.jpg
+    - images/food/burg3.jpeg
+    - images/food/burg4.jpeg
+    - images/drinks/drink1.jpg
+    - images/drinks/drink2.jpg
+    - images/drinks/drink3.jpg
+    - images/drinks/drink4.jpg
+
+
+    - images/food/Bruschetta.jpg
+    - images/food/carbonara.jpg
+    - images/food/churros.jpg
+    - images/food/enchiladas.jpg
+    - images/food/Fettuccine.jpg
+    - images/food/mochi.jpg
+    - images/food/Pasta.jpg
+    - images/food/pie.jpeg
+    - images/food/pizza.jpeg
+    - images/food/ramen.jpg
+    - images/food/RIBS.jpg
+    - images/food/sushi.jpg
+    - images/food/tacos.jpg
+    - images/food/tiramisu.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -43,7 +43,7 @@ class _EditCardState extends State<EditCard> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Edit Profile'), // Dialog title
+      title: const Text('Edit Profile'), // Dialog title
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize
@@ -52,25 +52,25 @@ class _EditCardState extends State<EditCard> {
             TextField(
               controller: nameController, // Controller for the name input field
               decoration:
-                  InputDecoration(labelText: 'Name'), // Input decoration
+                  const InputDecoration(labelText: 'Name'), // Input decoration
             ),
             TextField(
               controller:
                   emailController, // Controller for the email input field
               decoration:
-                  InputDecoration(labelText: 'Email'), // Input decoration
+                  const InputDecoration(labelText: 'Email'), // Input decoration
             ),
             TextField(
               controller:
                   phoneController, // Controller for the phone input field
               decoration:
-                  InputDecoration(labelText: 'Phone'), // Input decoration
+                  const InputDecoration(labelText: 'Phone'), // Input decoration
             ),
             TextField(
               controller:
                   locationController, // Controller for the location input field
               decoration:
-                  InputDecoration(labelText: 'Location'), // Input decoration
+                  const InputDecoration(labelText: 'Location'), // Input decoration
             ),
           ],
         ),
@@ -80,7 +80,7 @@ class _EditCardState extends State<EditCard> {
           onPressed: () {
             Navigator.of(context).pop(); // Close the dialog on cancel
           },
-          child: Text('Cancel'), // Cancel button text
+          child: const Text('Cancel'), // Cancel button text
         ),
         ElevatedButton(
           onPressed: () {

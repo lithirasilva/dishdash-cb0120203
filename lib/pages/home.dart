@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Custom drawer for the app
-      drawer: const MyDrawer(),
+      drawer: MyDrawer(),
       body: CustomScrollView(
         slivers: <Widget>[
           // Custom app bar with location information
